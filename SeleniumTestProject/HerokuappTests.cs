@@ -31,11 +31,7 @@ namespace SeleniumTestProject
         private static IWebDriver CreateChromeDriver(string driverDirectory, bool isDebuggerAttached)
         {
             var options = new ChromeOptions();
-
-            if (!isDebuggerAttached)
-            {
-                options.AddArgument("--headless");
-            }
+            options.AddArgument("--headless");
 
             return new ChromeDriver(driverDirectory, options);
         }
