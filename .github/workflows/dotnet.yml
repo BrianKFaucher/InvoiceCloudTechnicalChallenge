@@ -13,7 +13,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    permissions:  write-all
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -32,7 +32,7 @@ jobs:
     - name: upload artifact
       uses: actions/upload-pages-artifact@v1
       with: 
-          path: './htmlcov/'
+          path: './SeleniumTestProject/htmlcov/'
     - name: deploy to Github Pages
       uses: actions/deploy-pages@v2
       id: deployment
